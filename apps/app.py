@@ -7,7 +7,7 @@ app.config["MONGO_URI"] = "mongodb://localhost:27017/mars_app"
 mongo = PyMongo(app)
 @app.route("/")
 def index():
-    mars = mongo.db.mars.find.one()
+    mars = mongo.db.mars.find_one()
     return render_template("index.html", mars=mars)
 #create route for data scrapes
 @app.route("/scrape")
